@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-        <title>四无浪子--一个平凡的程序员</title>
-        <description>四无浪子--一个平凡的程序员 - Name Lastname</description>
-        <link>http://www.deonwu84.com</link>
-        <link>http://www.deonwu84.com</link>
-        <lastBuildDate>2014-07-06T22:37:04+08:00</lastBuildDate>
-        <pubDate>2014-07-06T22:37:04+08:00</pubDate>
+        <title>见面吧--一个纯陌生人交友移动应用</title>
+        <description>见面吧--一个纯陌生人交友移动应用 - Name Lastname</description>
+        <link>http://vdating.455.so</link>
+        <link>http://vdating.455.so</link>
+        <lastBuildDate>2014-07-06T22:50:50+08:00</lastBuildDate>
+        <pubDate>2014-07-06T22:50:50+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -15,8 +15,8 @@
                 <description>&lt;p&gt;要写点什么呢？
 这个Jekyll 还没用搞明白&lt;/p&gt;
 </description>
-                <link>http://www.deonwu84.com/2013/10/27/hello-wolrd</link>
-                <guid>http://www.deonwu84.com/2013/10/27/hello-wolrd</guid>
+                <link>http://vdating.455.so/2013/10/27/hello-wolrd</link>
+                <guid>http://vdating.455.so/2013/10/27/hello-wolrd</guid>
                 <pubDate>2013-10-27T00:00:00+08:00</pubDate>
         </item>
 
@@ -428,8 +428,8 @@ As noted, our main programming constraint is the fact that our API is limited to
 &lt;p&gt;Please take a look at &lt;a href=&quot;&quot;&gt;&lt;/a&gt;
 or jump right into &lt;a href=&quot;&quot;&gt;Usage&lt;/a&gt; if you'd like.&lt;/p&gt;
 </description>
-                <link>http://www.deonwu84.com/lessons/2011/12/29/jekyll-introduction</link>
-                <guid>http://www.deonwu84.com/lessons/2011/12/29/jekyll-introduction</guid>
+                <link>http://vdating.455.so/lessons/2011/12/29/jekyll-introduction</link>
+                <guid>http://vdating.455.so/lessons/2011/12/29/jekyll-introduction</guid>
                 <pubDate>2011-12-29T00:00:00+08:00</pubDate>
         </item>
 
