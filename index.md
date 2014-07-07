@@ -16,6 +16,16 @@ tagline: 首页 约会
 *  项目开发文档的完善
 *  招募人才
 
+
+
+## 即将加入的项目文档
+
+* 用户使用场景说明
+* 用户功能说明
+* 服务端接口介绍
+* 见面约会状态
+* 测试框架和脚本
+
 ## Markdown 相关学习资料
 *  [Mardown 基本语法](http://wowubuntu.com/markdown/)
 *  [Jekyll 文档](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
