@@ -9,9 +9,9 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : 见面吧--一个纯陌生人交友移动应用
-tagline: Site Tagline
+tagline: 标签列表
 author :
-  name : Name Lastname
+  name : 见面吧开发组
   email : deonwu@gmail.com
   github : deonwu	
   twitter : deonwu

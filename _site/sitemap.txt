@@ -3,6 +3,7 @@ http://vdating.455.so/archive.html
 http://vdating.455.so/atom.xml
 http://vdating.455.so/index.html
 http://vdating.455.so/pages/about.html
+http://vdating.455.so/pages/team.html
 http://vdating.455.so/pages.html
 http://vdating.455.so/rss.xml
 http://vdating.455.so/sitemap.txt

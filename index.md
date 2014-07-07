@@ -1,17 +1,20 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: 见面吧项目首页
+tagline: 首页 约会
 ---
-{% include JB/setup %}
 
-这是一个利用 Jekyll-Bootstrap 创建的Blog。 主要是为了学习，用Markdown来写文档。
+见面吧开发者 Wiki，用于记录一些项目的计划，开发文档，团队介绍等。
+
+
+
 
 ## To-Do
 
-*   把之前在google上面的项目移过来。
-*   为每个工具完善用户手册。
-*   修改一下模板，在右边加一个文章列表。
+*  完成组织结构的定义
+*  项目的里程碑计划
+*  项目开发文档的完善
+*  招募人才
 
 ## Markdown 相关学习资料
 *  [Mardown 基本语法](http://wowubuntu.com/markdown/)
