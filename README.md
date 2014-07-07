@@ -12,3 +12,5 @@ http://jekyllbootstrap.com/usage/jekyll-quick-start.html
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+国内访问，通过yunjiasu做代理，国外访问使用默认的GitHub CDN。
