@@ -16,6 +16,12 @@ description: "测试页面"
 $api = new Taodian();
 $api->cms_api_info();
 
+class XX{
+	function test(){
+		print $api;
+	}
+}
+
 ```
 
 
