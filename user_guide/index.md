@@ -1,3 +1,8 @@
+---
+layout: page
+title: "测试页面"
+description: "测试页面"
+---
 
 #淘点开放API手册#
 
@@ -5,7 +10,7 @@
 和外部第三方开放者都使用统一的接口。
 
 例如：
-```php
+```php 
 
 $api = new Taodian();
 $api->cms_api_info();
@@ -34,11 +39,4 @@ $api->cms_api_info();
 
 ###自动化测试###
 *  robot代码
-
-{% markdown robot_study.md %}
-
-
-
-
-
 
