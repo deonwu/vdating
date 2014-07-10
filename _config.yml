@@ -135,10 +135,10 @@ safe: true
 lsi: false
 
 redcarpet:
-	extensions:
-		- with_toc_data
-		- hard_wrap
-		- no_intra_emphasis
-		- tables
-		- fenced_code_blocks
-		- autolink
+    extensions:
+        - with_toc_data
+        - hard_wrap
+        - no_intra_emphasis
+        - tables
+        - fenced_code_blocks
+        - autolink
