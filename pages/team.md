@@ -12,7 +12,15 @@ group: navigation
 
 ##目前成员列表
 
-* 吴大龙(Deon) -- 项目发起人
+#### 吴大龙(Deon) -- 项目发起人
+![吴大龙](/images/deonwu.png)
+
+*项目职责* 
+android开发，服务端开发
+
+*个人资料* 
+程序员，10+年工作经验，熟悉java，python，android开发。 
+
 * 刘慧红(Anne) -- 项目产品经理
 * 吴敏校(Shawn) -- 待分配
 * 郑志渊 -- 待分配
