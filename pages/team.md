@@ -38,6 +38,7 @@ group: navigation
 
 
 * 刘慧红(Anne) -- 项目产品经理
+![Anne](/images/Anne.jpg)
 *项目职责经历* 
 7月： 产品设计&
 
@@ -53,7 +54,7 @@ group: navigation
 *个人资料* 
 
 * 郑志渊 -- 测试
-![吴大龙](/images/Terry.jpg)
+![Jerry](/images/Jerry.jpg)
 *项目职责经历* 
 7月：功能测试&自动化测试
 
