@@ -54,7 +54,9 @@ group: navigation
 *个人资料* 
 
 * 郑志渊 -- 测试
+
 ![Jerry](/images/Jerry.jpg)
+
 *项目职责经历* 
 7月：功能测试&自动化测试
 
