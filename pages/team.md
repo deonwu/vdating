@@ -26,18 +26,19 @@ group: navigation
 
 ##目前成员列表
 
+
 #### 吴大龙(Deon) -- 项目发起人
 ![吴大龙](/images/deonwu.png)
 
-*项目职责经历* 
+*项目职责经历
 7月： 产品设计&android开发&服务端开发&CI&功能测试
 
 
-*个人资料* 
+*个人资料
 程序员，10+年工作经验，熟悉java，python，android开发。 
 
 
-* 刘慧红(Anne) -- 项目产品经理
+**刘慧红(Anne) -- 项目产品经理
 ![刘慧红](/images/Anne.jpg)
 *项目职责经历* 
 7月： 产品设计&
