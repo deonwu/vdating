@@ -38,7 +38,7 @@ group: navigation
 程序员，10+年工作经验，熟悉java，python，android开发。 
 
 
-**刘慧红(Anne) -- 项目产品经理
+#### 刘慧红(Anne) -- 项目产品经理
 ![刘慧红](/images/Anne.jpg)
 *项目职责经历* 
 7月： 产品设计&
@@ -50,11 +50,11 @@ group: navigation
 爱好旅行，徒步，音乐
 
 
-* 吴敏校(Shawn) -- 待分配
+#### 吴敏校(Shawn) -- 待分配
 *项目职责经历* 
 *个人资料* 
 
-* 郑志渊 -- 测试
+#### 郑志渊 -- 测试
 
 ![郑志渊](/images/Jerry.jpg)
 
@@ -64,7 +64,7 @@ group: navigation
 *个人资料* 
 
 
-* 李光新 -- windows 开发
+#### 李光新 -- windows 开发
 
 
 *项目职责经历* 
