@@ -65,7 +65,7 @@ group: navigation
 
 
 * 李光新 -- windows 开发
-
+![李光新](/images/李光新.jpg)
 
 *项目职责经历* 
 7月： windows开发
