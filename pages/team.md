@@ -30,7 +30,7 @@ group: navigation
 ##目前成员列表
 
 ![吴大龙](/images/deonwu.png)
-#### 吴大龙(Deon) -- 项目发起人
+#### 吴大龙(Deon)   项目发起人
 
 ##### 项目职责经历
 
@@ -43,7 +43,7 @@ group: navigation
 
 
 ![刘慧红](/images/Anne.jpg)
-#### 刘慧红(Anne) -- 项目产品经理
+#### 刘慧红(Anne)   项目产品经理
 
 ##### 项目职责经历 
 
@@ -58,7 +58,7 @@ group: navigation
 #####
 
 
-#### 吴敏校(Shawn) -- 待分配
+#### 吴敏校(Shawn)   待分配
 
 ##### 项目职责经历
 
@@ -69,7 +69,7 @@ group: navigation
 
 
 ![郑志渊](/images/Jerry.jpg)
-#### 郑志渊 -- 测试
+#### 郑志渊   测试
 
 ##### 项目职责经历
 * 7月：功能测试&自动化测试
@@ -85,7 +85,7 @@ group: navigation
 
 
 ![李光新](/images/李光新.jpg)
-#### 李光新 -- windows 开发
+#### 李光新   windows 开发
 
 ##### 项目职责经历
 * 7月： windows开发
@@ -100,7 +100,7 @@ group: navigation
 
 
 ![高明军](/images/高兄.jpg)
-#### 高明军 -- android 开发
+#### 高明军   Android 开发
 
 ##### 项目职责经历
 * 7月： android开发
