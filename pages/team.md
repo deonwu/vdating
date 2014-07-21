@@ -23,7 +23,10 @@ group: navigation
 *  市场&商务
 *  法律顾问
 *  财务
+
+
 ##
+
 ##目前成员列表
 
 ![吴大龙](/images/deonwu.png)
@@ -64,6 +67,7 @@ group: navigation
 #####
 
 
+
 ![郑志渊](/images/Jerry.jpg)
 #### 郑志渊 -- 测试
 
@@ -75,6 +79,8 @@ group: navigation
 * 工作领域： 电路设计
 * 最喜欢的一句话： 人的一生很短，而好的作品比人活得长
 #####
+
+
 
 
 
@@ -91,6 +97,8 @@ group: navigation
 
 
 
+
+
 ![高明军](/images/高兄.jpg)
 #### 高明军 -- android 开发
 
@@ -102,7 +110,10 @@ group: navigation
 * 从事开发工作两年有余，爱好看书，听歌。
 
 
+
+
 ##
+
 ##曾经参加成员列表
 * 无
 ##
