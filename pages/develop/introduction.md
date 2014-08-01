@@ -31,10 +31,11 @@ tags: [开发者, 入门]
 | 参数名        | 中文说明           | 功能说明                                                         |
 | ------------- |:---------------| :-----------------------------------------------------------------|
 | [dating_session_status](/api_doc/global.html#dating_session_status)  | 约会会话状态查询 | 查询一个约会的状态，和用户可以对约会做的操作。                    
+| [dating_session_update_status](/api_doc/global.html#dating_session_update_status)  | 约会会话状态修改 | 接受约会、拒绝约会、确认见面等约会相关操作  
 | [dating_topic_list](/api_doc/global.html#dating_topic_list)  | 约会活动列表 | 根据当前地位位置和用户，查询可以参加的约会活动列表。                      
 | [dating_my_topic_list](/api_doc/global.html#dating_my_topic_list)  | 我创建的约会列表 | 当前用户发起的约会列表                                        
-| [dating_update_status](/api_doc/global.html#dating_update_status)  | 约会会话状态修改 | 接受约会、拒绝约会、确认见面等约会相关操作                      
-| [invite_friend](/api_doc/global.html#invite_friend)  | 好友邀请 | 保存好友邀请关系                                         
+| [dating_topic_update_status](/api_doc/global.html#dating_topic_update_status)  | 约会主题状态修改 | 约会主题状态的修改，(例如删除约会)  
+| [invite_friend](/api_doc/global.html#invite_friend)  | 好友邀请 | 保存好友邀请关系 
 | [ranking_cate_list](/api_doc/global.html#ranking_cate_list)  | 排行榜分类 | 查询支持的排行榜类型              
 | [ranking_data_list](/api_doc/global.html#ranking_data_list)  | 排行榜数据 | 排行榜里面的具体数据              
 | [request_new_dating](/api_doc/global.html#request_new_dating)  | 申请参加约会 | 参加别人的约会                 
