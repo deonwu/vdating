@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: func_dating_update_status.js</title>
+    <title>JSDoc: Source: func_invite_friend.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: func_dating_update_status.js</h1>
+    <h1 class="page-title">Source: func_invite_friend.js</h1>
 
     
 
@@ -25,19 +25,17 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-/** 
- * 修改约会活动的状态。
+            <pre class="prettyprint source linenums"><code>/**
+ * 保存用户的邀请关系，已经邀请过了，就忽略。没有邀请过，就保存邀请关系。
  * 
- * @method dating_topic_update_status
- * @param {String} topic_id 约会主题ID
- * @param {String} action 操作(remove)
- *	
- * @return {Object} 返回状态信息。
+ * @method invite_friend
+ * @param {String} tel_no 已经邀请了的用户手机号码。
+ * 
+ * @return {Object} 对象列表
  */
 
-AV.Cloud.define("dating_topic_update_status", function(request, response) {
-	  var topic = AV.Object.extend("DatingTopic");
+AV.Cloud.define("invite_friend", function(request, response) {
+	  var Invite = AV.Object.extend("InviteFriend");
 	  
 	  var result = {'status': 'ok'};
 	  var data = {};
@@ -48,27 +46,32 @@ AV.Cloud.define("dating_topic_update_status", function(request, response) {
 		  var curUser = new AV.User();
 		  curUser.id = request.params.user_id;
 	  }
-	  	  
-	  var topic_id = request.params.topic_id || "no_tid";
-	  var action = request.params.action || "remove";
 	  
-	  var st = {'remove': 'removed'};
-	  
-	  var new_st = st[action] || 'active';
-	  
-	  new AV.Query(topic).get(topic_id)
+	  //curUser = curUser || 
+	  new AV.Query(Invite).include("friend_list").equalTo("owner", curUser)
+	  .first()
 	  .then(function(obj){
 		  if(obj){
-			  console.log("cur topic status:" + obj.get('status') + ", tid:" + topic_id);
-			  if(obj.get('status') != new_st){
-				  result.new_status = new_st;
-				  return obj.save({'status': new_st});
+			  var t = obj.get("friend_list");
+			  
+			  if(t &amp;&amp; t.indexOf(request.params.tel_no) >= 0){
+				  result.status = 'ok';
+				  result.code = 'invited';
 			  }else {
-				  result.code = "no_change";				  
+				  obj.add('friend_list', request.params.tel_no);
 			  }
+
+			  var t = obj.get("blacklist");
+			  
+			  if(t &amp;&amp; t.indexOf(request.params.tel_no) >= 0){
+			  }else {
+				  obj.add('blacklist', request.params.tel_no);
+			  }	  
+			  
+			  return obj.save();
 		  }else {
-			  result.status = 'err';
-			  result.code = 'not_found_dating_topic';
+			  return new Invite().save({'owner': curUser, 
+				  					  'friend_list':[request.params.tel_no, ]});
 		  }
 	  })
 	  .then(function(obj){

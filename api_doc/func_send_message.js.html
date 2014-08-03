@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: func_send_message.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: func_send_message.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * 处理一个用户，消息发送。
+ * 
+ */
+
+
+/**
+ * 发送一个用户消息。
+ * 
+ * @method send_message
+ * @param {String} to_user -- 消息的接收者ID
+ * @param {String} from_user -- 消息发送者ID
+ * @param {String} msg_type -- 消息类型，鲜花，文本等。
+ * @param {String} flower_count -- 鲜花数量，如果消息类型是鲜花。
+ * @param {String} message -- 需要发送的消息文本。
+ * 
+ * @return {Object} 返回发送状态。
+ */
+AV.Cloud.define("send_message", function(request, response) {
+	  var to_user = request.params.to_user;
+	  var from_user = request.params.from_user;
+	  var msg_type = request.params.msg_type || 'text';
+	  var flower_count = parseInt(request.params.flower_count);
+	  
+	  //var t = new Topic();
+	  //t.id = topic_id;
+	  //console.log("has send topic info:");
+	  console.log("send message:" + msg_type + ", message:" + request.params.message);
+
+	  var install = AV.Object.extend("_Installation");
+	  var flowerLog = AV.Object.extend("UserFlowerLog");
+	  
+	  var result = {};
+	  var data = {};
+	  new AV.Query(AV.User).get(to_user)
+	  .then(function(obj){
+		  if(obj){
+			  data.to_user = obj;
+			  return new AV.Query(AV.User).get(from_user);
+		  }else {
+			  result.status = 'err';
+			  result.code = 'not_found_from_user';
+		  }
+	  })
+	  .then(function(obj){
+		  if(obj){
+			  data.from_user = obj;
+			  return AV.Promise.as();
+		  }else {
+			  result.status = 'err';
+			  result.code = 'not_found_to_user';
+		  }
+	  })
+	  .then(function(obj){
+		  if(msg_type == 'send_flower'){
+			if(data.from_user.get('has_flower') > flower_count){
+				var new_flower = data.from_user.get('has_flower') - flower_count;
+				
+				data.from_user.set("has_flower", new_flower);
+				data.from_user.increment("sent_flower", flower_count);
+				data.message_param = request.params.flower_count;
+				return data.from_user.save();
+			}else {
+				result.status = 'err';
+				result.code = 'no_enough_flower';
+				result.cur_flower_count = data.from_user.get('has_flower');
+				
+				return AV.Promise.error();				
+			}
+		  }else {
+			  return AV.Promise.as();
+		  }
+	  })
+	  .then(function(obj){
+		  if(msg_type == 'send_flower'){
+			  data.to_user.increment("got_flower", flower_count);
+			  data.to_user.increment("has_flower", flower_count);
+			  
+			  new flowerLog().save({'from_user': data.from_user, 'to_user': data.to_user,
+				  'flower_count': flower_count,
+				  'from_remain_flower': data.from_user.get('has_flower'),
+				  'to_remain_flower': data.to_user.get('has_flower'),
+				  'action': 'send_flower',
+			  });
+			  
+			  return data.to_user.save();
+		  }else {
+			  return AV.Promise.as();			  
+		  }
+	  })
+	  .then(function(obj){
+		  
+		  var msgId = data.to_user.id + (new Date().getTime());
+
+		  if(msg_type == 'new_session'){
+			  data.message_param = request.params.session_id;
+			  
+			  msgId = data.to_user.id + request.params.session_id;
+		  }
+		  
+		  var query = new AV.Query(install).equalTo("user_id", data.to_user.id);
+		  
+		  if(request.params.bi_dir){
+			  var q2 = new AV.Query(install).equalTo("user_id", data.from_user.id);
+			  query = AV.Query.or(query, q2);
+		  }
+		  		  
+		  var msg = {"from_user_id": data.from_user.id,
+				  	 "to_user_id": data.to_user.id,
+				  	 "message_type": msg_type,
+				  	 "message": request.params.message || '',
+				  	 "message_param": request.params.message_param || data.message_param,
+				  	 "action": "com.avos.UPDATE_STATUS",
+				  	 "message_id": msgId,
+				  	 "message_time": new Date().getTime()
+				   };
+		  
+		  result.status = 'ok';
+		  result.dev_id = data.to_user.get("INSTALL_ID");
+		  
+		  return AV.Push.send({'where': query, 'channels': ['private', ],
+			  				   'expiration_interval': 3 * 60,
+			  				   'data': msg});
+		  
+	  })
+	  .then(function(obj){
+		  response.success(result);	  
+	  }, function(obj){
+		  if(obj){
+			  console.log("error:" + obj.toString());
+	  	  }
+		  if(result.status == 'ok'){
+			  result.status = 'err';
+		  }
+		  result.data = obj;
+		  response.success(result);
+	  })
+	  ;	  
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Global</h3><ul><li><a href="global.html#dating_session_status">dating_session_status</a></li><li><a href="global.html#dating_session_update_status">dating_session_update_status</a></li><li><a href="global.html#dating_topic_list">dating_topic_list</a></li><li><a href="global.html#dating_topic_update_status">dating_topic_update_status</a></li><li><a href="global.html#invite_friend">invite_friend</a></li><li><a href="global.html#ranking_cate_list">ranking_cate_list</a></li><li><a href="global.html#ranking_data_list">ranking_data_list</a></li><li><a href="global.html#request_new_dating">request_new_dating</a></li><li><a href="global.html#send_message">send_message</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Sun Aug 03 2014 15:14:47 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
