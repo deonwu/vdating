@@ -1,7 +1,7 @@
-﻿---
+---
 layout: page
-title: "版本历史"
-description: "版本历史"
+title: "历史版本"
+description: "历史版本记录"
 group: navigation
 ---
 见面吧的里程表在这里：
