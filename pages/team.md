@@ -40,7 +40,7 @@ group: navigation
 * 7月： 产品设计&android开发&服务端开发&CI&功能测试
 *
 
-#####
+<br>
 
 
 ![刘慧红](/images/Anne.jpg)
@@ -58,7 +58,7 @@ group: navigation
 *
 
 
-#####
+<br>
 
 
 
